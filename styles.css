@@ -1,0 +1,144 @@
+/* CSS Variables */
+:root {
+    --main-color: #333;                                       
+    --accent-color: #fff;                                    
+    --background-color: #121212;                             
+}
+
+/* General Styles */
+/* This piece of code came from (ChatGPT) and what it does is 
+it sets the font for the entire page to Arial (or a sans-serif alternative), 
+removes default margins and padding from the body, applies the accent 
+color to the text, and sets the background color to the defined variable. */
+body { 
+    font-family: Arial, sans-serif;                          
+    margin: 0;                                                  
+    padding: 0;                                                 
+    color: var(--accent-color);                                
+    background-color: var(--background-color);                  
+}
+/* This piece of code came from (ChatGPT) and what it does is 
+it sets the header to use flexbox to align the items horizontally, 
+creates space between the logo and navigation, centers them vertically, 
+gives the header a background color, changes the text color, 
+and adds padding around the content. */
+header { 
+    display: flex;                                              
+    justify-content: space-between;                             
+    align-items: center;                                        
+    background-color: var(--main-color);                        
+    color: var(--accent-color);                                 
+    padding: 20px;                                              
+}
+
+nav {
+    display: flex;                                             
+}
+
+/* This piece of code came from (ChatGPT) and what it does is that it 
+it make the unordered list for texts of the links to have no bullet points,
+no padding and use flex box which is to appear horizontal. */ 
+nav ul { 
+    list-style-type: none;                                      
+    padding: 0;                                          
+    display: flex;                                             
+}
+/* This piece of code came from (ChatGPT) and what it does is that it 
+it make the texts for the links to each page use flexbox, there be a
+15 pixel margin on the left and right of each link text, makes sure
+that each text is centered and the that they appear in a row. */ 
+nav ul li { 
+    display: flex;                                              
+    margin: 0 15px;                                             
+    text-align: center;                                         
+    flex-direction: row;                                        
+}
+/* This piece of code came from (ChatGPT) and what it does is that it 
+ accents the color of the link and removes the underline on the hyperlinks
+ to the other pages in the header nav. */ 
+nav ul li a { 
+    color: var(--accent-color);                                
+    text-decoration: none;                                 
+}
+
+/* Hero Section */
+/* The hero class makes it so that the section with the profile, text, 
+ and buttom use flexbox and are in the center of the section with the text
+ being aligned to the left side of the section and there be padding of
+ 40 pixels for top and bottom, and 20 pixels on the sides for there 
+ to be space around the text and profile. The one thing I did change
+ was that I removed the row flex direction to stop it from swapping
+ the places of the profie, text and button. (ChatGPT) */
+.hero {                           
+    display: flex;                
+    align-items: center;        
+    text-align: left;             
+    padding: 40px 20px; 
+        
+}
+/* The hero-img class makes it so that the image is over 200 pixels
+ wide and that height being auto means that the image's height will
+ not change from any size. The margin left also makes it so that the
+ image will be a at least 20 pixels away from the left side of the
+ screen from where it is at. (ChatGPT) */
+.hero-img {
+    width: 200px;                 
+    height: auto;                
+    margin-left: 20px;            
+}
+
+
+
+
+/* Projects Overview */
+/* The padding in the projects overview section is make the 
+whole section have more breathing room. (ChatGPT) */
+.projects-overview {                                            
+    padding: 20px;                                               
+                                          
+}
+
+/* This sets up the project category class to be have 20
+pixels of space in the padding so that the stuff inside doesent touch
+that edges of the box and 20 pixels of space in the margin so that
+there is space above and below this section to separate it from 
+other sections. The one thing I did change was making it a grid layout and
+put three columns that are at least 200 pixels wide and have 20 pixels
+of spacing in between them. (ChatGPT) (In-class) */
+.project-category {                                             
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;   
+    margin: 20px 0;                                         
+}
+/* This sets up the project item class to change the background color
+ for each project item to be the one color from the header class. The 
+ padding makes it so that each project has at least 10 pixels of space
+ inside for the edges. The border radius makes it so that the items have
+ slightly rounded corners with a 5-pixel radius. And the margin adds 5 pixels
+ of space above and below each project item to create some separation from
+ other items.(ChatGPT) */
+.project-item { 
+    background: var(--main-color);                           
+    padding: 10px;                                             
+    border-radius: 5px;                                         
+    margin: 5px 0;                                              
+}
+@media (max-width: 768px) {
+    .project-category {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-category {
+      grid-template-columns: 1fr;
+    }
+}
+/* Footer */
+footer {
+    text-align: center;                                         
+    padding: 10px;                                              
+    background-color: var(--main-color);                      
+}
